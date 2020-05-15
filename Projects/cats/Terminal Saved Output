@@ -1,0 +1,1054 @@
+Last login: Wed Oct 16 15:19:43 on ttys000
+airbears2-10-142-139-35:~ amitbhat$ mv ~/Downloads/lab07/ ~/Desktop/CS61A/Labs/
+airbears2-10-142-139-35:~ amitbhat$ cd Desktop/CS61A/Labs/lab07
+airbears2-10-142-139-35:lab07 amitbhat$ python3 ok -q link -u
+=====================================================================
+Assignment: Lab 7
+OK, version v1.14.15
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unlocking tests
+
+At each "? ", type what you would expect the output to be.
+Type exit() to quit
+
+---------------------------------------------------------------------
+Link > Suite 1 > Case 1
+(cases remaining: 3)
+
+What would Python display? If you get stuck, try it out in the Python
+interpreter!
+
+>>> from lab07 import *
+>>> link = Link(1000)
+>>> link.first
+? 1000
+-- OK! --
+
+>>> link.rest is Link.empty
+? True
+-- OK! --
+
+>>> link = Link(1000, 2000)
+? Error
+-- OK! --
+
+>>> link = Link(1000, Link())
+? Error
+-- OK! --
+
+---------------------------------------------------------------------
+Link > Suite 1 > Case 2
+(cases remaining: 2)
+
+What would Python display? If you get stuck, try it out in the Python
+interpreter!
+
+>>> from lab07 import *
+>>> link = Link(1, Link(2, Link(3)))
+>>> link.first
+? 1
+-- OK! --
+
+>>> link.rest.first
+? 2
+-- OK! --
+
+>>> link.rest.rest.rest is Link.empty
+? True
+-- OK! --
+
+>>> link.first = 9001
+>>> link.first
+? Error
+-- Not quite. Try again! --
+
+? 9001
+-- OK! --
+
+>>> link.rest = link.rest.rest
+>>> link.rest.first
+? 3
+-- OK! --
+
+>>> link = Link(1)
+>>> link.rest = link
+>>> link.rest.rest.rest.rest.first
+? Nothing
+-- Not quite. Try again! --
+
+? Error
+-- Not quite. Try again! --
+
+? link.empty
+-- Not quite. Try again! --
+
+? Link.empty
+-- Not quite. Try again! --
+
+? empty
+-- Not quite. Try again! --
+
+? Function
+-- Not quite. Try again! --
+
+? 1
+-- OK! --
+
+>>> link = Link(2, Link(3, Link(4)))
+>>> link2 = Link(1, link)
+>>> link2.first
+? 1
+-- OK! --
+
+>>> link2.rest.first
+? 2
+-- OK! --
+
+---------------------------------------------------------------------
+Link > Suite 1 > Case 3
+(cases remaining: 1)
+
+What would Python display? If you get stuck, try it out in the Python
+interpreter!
+
+>>> from lab07 import *
+>>> link = Link(5, Link(6, Link(7)))
+>>> link                  # Look at the __repr__ method of Link
+? Link(5, Link(6, Link(7)))
+-- OK! --
+
+>>> print(link)          # Look at the __str__ method of Link
+? <5 6 7>
+-- OK! --
+
+---------------------------------------------------------------------
+OK! All cases for Link unlocked.
+
+ERROR  | auth.py:102 | {'error': 'invalid_grant'}
+Performing authentication
+Please enter your bCourses email: amit.bhat@berkeley.edu
+Successfully logged in as amit.bhat@berkeley.edu
+Backup... 100% complete
+Backup successful for user: amit.bhat@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+airbears2-10-142-139-35:lab07 amitbhat$ python3 ok -q trees -u
+=====================================================================
+Assignment: Lab 7
+OK, version v1.14.15
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unlocking tests
+
+At each "? ", type what you would expect the output to be.
+Type exit() to quit
+
+---------------------------------------------------------------------
+Trees > Suite 1 > Case 1
+(cases remaining: 1)
+
+What would Python display? If you get stuck, try it out in the Python
+interpreter!
+
+>>> t = Tree(1, Tree(2)) # Enter Function if you believe the answer is <function ...>, Error if it errors, and Nothing if nothing is displayed.
+? Nothing
+-- Not quite. Try again! --
+
+? Function
+-- Not quite. Try again! --
+
+? Error
+-- OK! --
+
+>>> t = Tree(1, [Tree(2)])
+>>> t.label
+? 1
+-- OK! --
+
+>>> t.branches[0]
+? Tree(2)
+-- OK! --
+
+>>> t.branches[0].label
+? 2
+-- OK! --
+
+>>> t.label = t.branches[0].label
+>>> t
+? Tree(2, [Tree(2)])
+-- OK! --
+
+>>> t.branches.append(Tree(4, [Tree(8)]))
+>>> len(t.branches)
+? 2
+-- OK! --
+
+>>> t.branches[0]
+? Tree(2)
+-- OK! --
+
+>>> t.branches[1]
+? Tree(4, [Tree(8)])
+-- OK! --
+
+---------------------------------------------------------------------
+OK! All cases for Trees unlocked.
+
+Backup... 100% complete
+Backup successful for user: amit.bhat@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+airbears2-10-142-139-35:lab07 amitbhat$ python3 ok -q scale
+=====================================================================
+Assignment: Lab 7
+OK, version v1.14.15
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Doctests for scale
+
+>>> from lab07 import *
+>>> s = scale([1, 5, 2], 5)
+>>> type(s)
+<class 'generator'>
+>>> list(s)
+[1, 5, 2, 1, 5, 2, 1, 5, 2, 1, 5, 2, 1, 5, 2]
+
+# Error: expected
+#     [5, 25, 10]
+# but got
+#     [1, 5, 2, 1, 5, 2, 1, 5, 2, 1, 5, 2, 1, 5, 2]
+
+---------------------------------------------------------------------
+Test summary
+    0 test cases passed before encountering first failed test case
+
+Backup... 100% complete
+Backup successful for user: amit.bhat@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+airbears2-10-142-139-35:lab07 amitbhat$ python3 ok -q scale
+=====================================================================
+Assignment: Lab 7
+OK, version v1.14.15
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Doctests for scale
+
+>>> from lab07 import *
+>>> s = scale([1, 5, 2], 5)
+>>> type(s)
+<class 'generator'>
+>>> list(s)
+[5, 25, 10]
+>>> m = scale(naturals(), 2)
+>>> [next(m) for _ in range(5)]
+Traceback (most recent call last):
+  File "/Users/amitbhat/Desktop/CS61A/Labs/lab07/lab07.py", line 32, in scale
+    for i in range(len(s)):
+TypeError: object of type 'generator' has no len()
+
+# Error: expected
+#     [2, 4, 6, 8, 10]
+# but got
+#     Traceback (most recent call last):
+#       ...
+#     TypeError: object of type 'generator' has no len()
+
+---------------------------------------------------------------------
+Test summary
+    0 test cases passed before encountering first failed test case
+
+Backup... 100% complete
+Backup successful for user: amit.bhat@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+airbears2-10-142-139-35:lab07 amitbhat$ python3 ok -q scale
+=====================================================================
+Assignment: Lab 7
+OK, version v1.14.15
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Doctests for scale
+
+>>> from lab07 import *
+>>> s = scale([1, 5, 2], 5)
+>>> type(s)
+<class 'generator'>
+>>> list(s)
+[1, 5, 2]
+
+# Error: expected
+#     [5, 25, 10]
+# but got
+#     [1, 5, 2]
+
+---------------------------------------------------------------------
+Test summary
+    0 test cases passed before encountering first failed test case
+
+Backup... 100% complete
+Backup successful for user: amit.bhat@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+airbears2-10-142-139-35:lab07 amitbhat$ python3 ok -q scale
+=====================================================================
+Assignment: Lab 7
+OK, version v1.14.15
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Test summary
+    1 test cases passed! No cases failed.
+
+Backup... 100% complete
+Backup successful for user: amit.bhat@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+airbears2-10-142-139-35:lab07 amitbhat$ python3 ok -q scale
+=====================================================================
+Assignment: Lab 7
+OK, version v1.14.15
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Doctests for scale
+
+>>> from lab07 import *
+>>> s = scale([1, 5, 2], 5)
+>>> type(s)
+<class 'generator'>
+>>> list(s)
+[1, 5, 2, 1, 5, 2, 1, 5, 2, 1, 5, 2, 1, 5, 2]
+
+# Error: expected
+#     [5, 25, 10]
+# but got
+#     [1, 5, 2, 1, 5, 2, 1, 5, 2, 1, 5, 2, 1, 5, 2]
+
+---------------------------------------------------------------------
+Test summary
+    0 test cases passed before encountering first failed test case
+
+Backup... 100% complete
+Backup successful for user: amit.bhat@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+airbears2-10-142-139-35:lab07 amitbhat$ python3 ok -q scale
+=====================================================================
+Assignment: Lab 7
+OK, version v1.14.15
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Doctests for scale
+
+>>> from lab07 import *
+>>> s = scale([1, 5, 2], 5)
+>>> type(s)
+<class 'generator'>
+>>> list(s)
+[5, 25, 10]
+>>> m = scale(naturals(), 2)
+>>> [next(m) for _ in range(5)]
+# Error: evaluation exceeded 10 seconds - check for infinite loops
+
+# Error: expected
+#     [2, 4, 6, 8, 10]
+# but got
+#     Traceback (most recent call last):
+#       ...
+#     Timeout: 
+
+---------------------------------------------------------------------
+Test summary
+    0 test cases passed before encountering first failed test case
+
+Backup... 100% complete
+Backup successful for user: amit.bhat@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+airbears2-10-142-139-35:lab07 amitbhat$ python3 ok -q scale
+=====================================================================
+Assignment: Lab 7
+OK, version v1.14.15
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Doctests for scale
+
+>>> from lab07 import *
+>>> s = scale([1, 5, 2], 5)
+>>> type(s)
+<class 'generator'>
+>>> list(s)
+[5, 25, 10]
+>>> m = scale(naturals(), 2)
+>>> [next(m) for _ in range(5)]
+# Error: evaluation exceeded 10 seconds - check for infinite loops
+
+# Error: expected
+#     [2, 4, 6, 8, 10]
+# but got
+#     Traceback (most recent call last):
+#       ...
+#     Timeout: 
+
+---------------------------------------------------------------------
+Test summary
+    0 test cases passed before encountering first failed test case
+
+Backup... 100% complete
+Backup successful for user: amit.bhat@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+airbears2-10-142-139-35:lab07 amitbhat$ python3 ok -q scale
+=====================================================================
+Assignment: Lab 7
+OK, version v1.14.15
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Test summary
+    1 test cases passed! No cases failed.
+
+Backup... 100% complete
+Backup successful for user: amit.bhat@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+airbears2-10-142-139-35:lab07 amitbhat$ python3 ok -q scale
+=====================================================================
+Assignment: Lab 7
+OK, version v1.14.15
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Test summary
+    1 test cases passed! No cases failed.
+
+^[[ABackup... 100% complete
+Backup successful for user: amit.bhat@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+airbears2-10-142-139-35:lab07 amitbhat$ python3 ok -q link_to_list
+=====================================================================
+Assignment: Lab 7
+OK, version v1.14.15
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Doctests for link_to_list
+
+>>> from lab07 import *
+>>> link = Link(1, Link(2, Link(3, Link(4))))
+>>> link_to_list(link)
+Traceback (most recent call last):
+  File "/Users/amitbhat/Desktop/CS61A/Labs/lab07/lab07.py", line 52, in link_to_list
+    return lst.append(link.first).extend(link_to_list(link.rest))
+AttributeError: 'NoneType' object has no attribute 'extend'
+
+# Error: expected
+#     [1, 2, 3, 4]
+# but got
+#     Traceback (most recent call last):
+#       ...
+#     AttributeError: 'NoneType' object has no attribute 'extend'
+
+---------------------------------------------------------------------
+Test summary
+    0 test cases passed before encountering first failed test case
+
+Backup... 100% complete
+Backup successful for user: amit.bhat@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+airbears2-10-142-139-35:lab07 amitbhat$ python3 ok -q link_to_list
+=====================================================================
+Assignment: Lab 7
+OK, version v1.14.15
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Doctests for link_to_list
+
+>>> from lab07 import *
+>>> link = Link(1, Link(2, Link(3, Link(4))))
+>>> link_to_list(link)
+Traceback (most recent call last):
+  File "/Users/amitbhat/Desktop/CS61A/Labs/lab07/lab07.py", line 52, in link_to_list
+    return lst.append(link.first) + (link_to_list(link.rest))
+  File "/Users/amitbhat/Desktop/CS61A/Labs/lab07/lab07.py", line 52, in link_to_list
+    return lst.append(link.first) + (link_to_list(link.rest))
+  File "/Users/amitbhat/Desktop/CS61A/Labs/lab07/lab07.py", line 52, in link_to_list
+    return lst.append(link.first) + (link_to_list(link.rest))
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'list'
+
+# Error: expected
+#     [1, 2, 3, 4]
+# but got
+#     Traceback (most recent call last):
+#       ...
+#     TypeError: unsupported operand type(s) for +: 'NoneType' and 'list'
+
+---------------------------------------------------------------------
+Test summary
+    0 test cases passed before encountering first failed test case
+
+Backup... 100% complete
+Backup successful for user: amit.bhat@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+airbears2-10-142-139-35:lab07 amitbhat$ python3 ok -q link_to_list
+=====================================================================
+Assignment: Lab 7
+OK, version v1.14.15
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Doctests for link_to_list
+
+>>> from lab07 import *
+>>> link = Link(1, Link(2, Link(3, Link(4))))
+>>> link_to_list(link)
+
+# Error: expected
+#     [1, 2, 3, 4]
+# but got
+
+
+---------------------------------------------------------------------
+Test summary
+    0 test cases passed before encountering first failed test case
+
+Backup... 100% complete
+Backup successful for user: amit.bhat@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+airbears2-10-142-139-35:lab07 amitbhat$ python3 ok -q link_to_list
+=====================================================================
+Assignment: Lab 7
+OK, version v1.14.15
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Doctests for link_to_list
+
+>>> from lab07 import *
+>>> link = Link(1, Link(2, Link(3, Link(4))))
+>>> link_to_list(link)
+
+# Error: expected
+#     [1, 2, 3, 4]
+# but got
+
+
+---------------------------------------------------------------------
+Test summary
+    0 test cases passed before encountering first failed test case
+
+Backup... 100% complete
+Backup successful for user: amit.bhat@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+airbears2-10-142-139-35:lab07 amitbhat$ python3 ok -q link_to_list
+=====================================================================
+Assignment: Lab 7
+OK, version v1.14.15
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Doctests for link_to_list
+
+>>> from lab07 import *
+>>> link = Link(1, Link(2, Link(3, Link(4))))
+>>> link_to_list(link)
+
+# Error: expected
+#     [1, 2, 3, 4]
+# but got
+
+
+---------------------------------------------------------------------
+Test summary
+    0 test cases passed before encountering first failed test case
+
+Backup... 100% complete
+Backup successful for user: amit.bhat@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+airbears2-10-142-139-35:lab07 amitbhat$ python3 ok -q link_to_list
+=====================================================================
+Assignment: Lab 7
+OK, version v1.14.15
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Doctests for link_to_list
+
+>>> from lab07 import *
+>>> link = Link(1, Link(2, Link(3, Link(4))))
+>>> link_to_list(link)
+
+# Error: expected
+#     [1, 2, 3, 4]
+# but got
+
+
+---------------------------------------------------------------------
+Test summary
+    0 test cases passed before encountering first failed test case
+
+Backup... 100% complete
+Backup successful for user: amit.bhat@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+airbears2-10-142-139-35:lab07 amitbhat$ python3 ok -q link_to_list
+=====================================================================
+Assignment: Lab 7
+OK, version v1.14.15
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Doctests for link_to_list
+
+>>> from lab07 import *
+>>> link = Link(1, Link(2, Link(3, Link(4))))
+>>> link_to_list(link)
+Traceback (most recent call last):
+  File "/Users/amitbhat/Desktop/CS61A/Labs/lab07/lab07.py", line 52, in link_to_list
+    return lst.extend(link_to_list(link.rest))
+  File "/Users/amitbhat/Desktop/CS61A/Labs/lab07/lab07.py", line 52, in link_to_list
+    return lst.extend(link_to_list(link.rest))
+TypeError: 'NoneType' object is not iterable
+
+# Error: expected
+#     [1, 2, 3, 4]
+# but got
+#     Traceback (most recent call last):
+#       ...
+#     TypeError: 'NoneType' object is not iterable
+
+---------------------------------------------------------------------
+Test summary
+    0 test cases passed before encountering first failed test case
+
+Backup... 100% complete
+Backup successful for user: amit.bhat@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+airbears2-10-142-139-35:lab07 amitbhat$ python3 ok -q link_to_list
+=====================================================================
+Assignment: Lab 7
+OK, version v1.14.15
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Doctests for link_to_list
+
+>>> from lab07 import *
+>>> link = Link(1, Link(2, Link(3, Link(4))))
+>>> link_to_list(link)
+[1]
+
+# Error: expected
+#     [1, 2, 3, 4]
+# but got
+#     [1]
+
+---------------------------------------------------------------------
+Test summary
+    0 test cases passed before encountering first failed test case
+
+Backup... 100% complete
+Backup successful for user: amit.bhat@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+airbears2-10-142-139-35:lab07 amitbhat$ python3 ok -q link_to_list
+=====================================================================
+Assignment: Lab 7
+OK, version v1.14.15
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Doctests for link_to_list
+
+>>> from lab07 import *
+>>> link = Link(1, Link(2, Link(3, Link(4))))
+>>> link_to_list(link)
+Traceback (most recent call last):
+  File "/Users/amitbhat/Desktop/CS61A/Labs/lab07/lab07.py", line 51, in link_to_list
+    return [link.first] + link_to_list(list.rest)
+AttributeError: type object 'list' has no attribute 'rest'
+
+# Error: expected
+#     [1, 2, 3, 4]
+# but got
+#     Traceback (most recent call last):
+#       ...
+#     AttributeError: type object 'list' has no attribute 'rest'
+
+---------------------------------------------------------------------
+Test summary
+    0 test cases passed before encountering first failed test case
+
+Backup... 100% complete
+Backup successful for user: amit.bhat@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+airbears2-10-142-139-35:lab07 amitbhat$ python3 ok -q link_to_list
+=====================================================================
+Assignment: Lab 7
+OK, version v1.14.15
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Doctests for link_to_list
+
+>>> from lab07 import *
+>>> link = Link(1, Link(2, Link(3, Link(4))))
+>>> link_to_list(link)
+[1, 2, 3]
+
+# Error: expected
+#     [1, 2, 3, 4]
+# but got
+#     [1, 2, 3]
+
+---------------------------------------------------------------------
+Test summary
+    0 test cases passed before encountering first failed test case
+
+Backup... 100% complete
+Backup successful for user: amit.bhat@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+airbears2-10-142-139-35:lab07 amitbhat$ python3 ok -q link_to_list
+=====================================================================
+Assignment: Lab 7
+OK, version v1.14.15
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Doctests for link_to_list
+
+>>> from lab07 import *
+>>> link = Link(1, Link(2, Link(3, Link(4))))
+>>> link_to_list(link)
+
+# Error: expected
+#     [1, 2, 3, 4]
+# but got
+
+
+---------------------------------------------------------------------
+Test summary
+    0 test cases passed before encountering first failed test case
+
+Backup... 100% complete
+Backup successful for user: amit.bhat@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+airbears2-10-142-139-35:lab07 amitbhat$ python3 ok -q link_to_list
+=====================================================================
+Assignment: Lab 7
+OK, version v1.14.15
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Doctests for link_to_list
+
+>>> from lab07 import *
+>>> link = Link(1, Link(2, Link(3, Link(4))))
+>>> link_to_list(link)
+Traceback (most recent call last):
+  File "/Users/amitbhat/Desktop/CS61A/Labs/lab07/lab07.py", line 51, in link_to_list
+    return [link.first].extend(link_to_list(link.rest))
+  File "/Users/amitbhat/Desktop/CS61A/Labs/lab07/lab07.py", line 51, in link_to_list
+    return [link.first].extend(link_to_list(link.rest))
+TypeError: 'NoneType' object is not iterable
+
+# Error: expected
+#     [1, 2, 3, 4]
+# but got
+#     Traceback (most recent call last):
+#       ...
+#     TypeError: 'NoneType' object is not iterable
+
+---------------------------------------------------------------------
+Test summary
+    0 test cases passed before encountering first failed test case
+
+Backup... 100% complete
+Backup successful for user: amit.bhat@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+airbears2-10-142-139-35:lab07 amitbhat$ python3 ok -q link_to_list
+=====================================================================
+Assignment: Lab 7
+OK, version v1.14.15
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Doctests for link_to_list
+
+>>> from lab07 import *
+>>> link = Link(1, Link(2, Link(3, Link(4))))
+>>> link_to_list(link)
+[1, 2, 3, 4]
+>>> link_to_list(Link.empty)
+Traceback (most recent call last):
+  File "/Users/amitbhat/Desktop/CS61A/Labs/lab07/lab07.py", line 48, in link_to_list
+    if not isinstance(link.rest, Link):
+AttributeError: 'tuple' object has no attribute 'rest'
+
+# Error: expected
+#     []
+# but got
+#     Traceback (most recent call last):
+#       ...
+#     AttributeError: 'tuple' object has no attribute 'rest'
+
+---------------------------------------------------------------------
+Test summary
+    0 test cases passed before encountering first failed test case
+
+Backup... 100% complete
+Backup successful for user: amit.bhat@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+airbears2-10-142-139-35:lab07 amitbhat$ python3 ok -q link_to_list
+=====================================================================
+Assignment: Lab 7
+OK, version v1.14.15
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Doctests for link_to_list
+
+>>> from lab07 import *
+>>> link = Link(1, Link(2, Link(3, Link(4))))
+>>> link_to_list(link)
+[1, [2, [3, [4]]]]
+
+# Error: expected
+#     [1, 2, 3, 4]
+# but got
+#     [1, [2, [3, [4]]]]
+
+---------------------------------------------------------------------
+Test summary
+    0 test cases passed before encountering first failed test case
+
+Backup... 100% complete
+Backup successful for user: amit.bhat@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+airbears2-10-142-139-35:lab07 amitbhat$ python3 ok -q link_to_list
+=====================================================================
+Assignment: Lab 7
+OK, version v1.14.15
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Doctests for link_to_list
+
+>>> from lab07 import *
+>>> link = Link(1, Link(2, Link(3, Link(4))))
+>>> link_to_list(link)
+[1, 2, 3, 4]
+>>> link_to_list(Link.empty)
+Traceback (most recent call last):
+  File "/Users/amitbhat/Desktop/CS61A/Labs/lab07/lab07.py", line 48, in link_to_list
+    if not isinstance(link.rest, Link):
+AttributeError: 'tuple' object has no attribute 'rest'
+
+# Error: expected
+#     []
+# but got
+#     Traceback (most recent call last):
+#       ...
+#     AttributeError: 'tuple' object has no attribute 'rest'
+
+---------------------------------------------------------------------
+Test summary
+    0 test cases passed before encountering first failed test case
+
+Backup... 100% complete
+Backup successful for user: amit.bhat@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+airbears2-10-142-139-35:lab07 amitbhat$ python3 ok -q link_to_list
+=====================================================================
+Assignment: Lab 7
+OK, version v1.14.15
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Doctests for link_to_list
+
+>>> from lab07 import *
+>>> link = Link(1, Link(2, Link(3, Link(4))))
+>>> link_to_list(link)
+[1, 2, 3]
+
+# Error: expected
+#     [1, 2, 3, 4]
+# but got
+#     [1, 2, 3]
+
+---------------------------------------------------------------------
+Test summary
+    0 test cases passed before encountering first failed test case
+
+Backup... 100% complete
+Backup successful for user: amit.bhat@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+airbears2-10-142-139-35:lab07 amitbhat$ python3 ok -q link_to_list
+=====================================================================
+Assignment: Lab 7
+OK, version v1.14.15
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Doctests for link_to_list
+
+>>> from lab07 import *
+>>> link = Link(1, Link(2, Link(3, Link(4))))
+>>> link_to_list(link)
+Traceback (most recent call last):
+  File "/Users/amitbhat/Desktop/CS61A/Labs/lab07/lab07.py", line 51, in link_to_list
+    return [link.first] + link_to_list(link.rest)
+  File "/Users/amitbhat/Desktop/CS61A/Labs/lab07/lab07.py", line 51, in link_to_list
+    return [link.first] + link_to_list(link.rest)
+  File "/Users/amitbhat/Desktop/CS61A/Labs/lab07/lab07.py", line 51, in link_to_list
+    return [link.first] + link_to_list(link.rest)
+TypeError: can only concatenate list (not "int") to list
+
+# Error: expected
+#     [1, 2, 3, 4]
+# but got
+#     Traceback (most recent call last):
+#       ...
+#     TypeError: can only concatenate list (not "int") to list
+
+---------------------------------------------------------------------
+Test summary
+    0 test cases passed before encountering first failed test case
+
+Backup... 100% complete
+Backup successful for user: amit.bhat@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+airbears2-10-142-139-35:lab07 amitbhat$ 
